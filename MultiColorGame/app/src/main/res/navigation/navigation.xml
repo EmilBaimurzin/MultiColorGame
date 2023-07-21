@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.multi.game.ui.main.FragmentMain"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentGame"
+            app:destination="@id/fragmentGame" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentSettings"
+            app:destination="@id/fragmentSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGame"
+        android:name="com.multi.game.ui.game.FragmentGame"
+        android:label="FragmentGame" >
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogEnd"
+            app:destination="@id/dialogEnd" />
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogEnd"
+        android:name="com.multi.game.ui.dialogs.DialogEnd"
+        android:label="DialogEnd" >
+        <argument
+            android:name="time"
+            app:argType="integer" />
+        <argument
+            android:name="isWin"
+            app:argType="boolean" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogPause"
+        android:name="com.multi.game.ui.dialogs.DialogPause"
+        android:label="DialogPause" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.multi.game.ui.settings.FragmentSettings"
+        android:label="FragmentSettings" />
+</navigation>

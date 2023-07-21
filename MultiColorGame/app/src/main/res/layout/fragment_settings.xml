@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_game"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/button_setting"
+        app:layout_constraintBottom_toTopOf="@+id/centerContainer"
+        app:layout_constraintEnd_toEndOf="@+id/centerContainer"
+        app:layout_constraintStart_toStartOf="@+id/centerContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:background="@drawable/bg_dialog"
+        android:id="@+id/centerContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/musicText"
+            style="@style/BasicText"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/music"
+            android:textColor="#91171D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/musicSlider"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/bg_music"
+            android:value="50"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/musicText"
+            app:tickColorActive="@android:color/transparent"
+            app:tickColorInactive="@android:color/transparent"
+            app:trackColor="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/vibrationText"
+            style="@style/BasicText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vibration"
+            android:layout_marginTop="10dp"
+            android:textColor="#91171D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/musicSlider" />
+
+        <com.multi.game.core.library.CustomImageButton
+            android:id="@+id/buttonOn"
+            android:src="@drawable/button_on_active"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/verticalLine"
+            app:layout_constraintTop_toBottomOf="@+id/vibrationText" />
+
+        <com.multi.game.core.library.CustomImageButton
+            android:id="@+id/buttonOff"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/button_off_active"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toStartOf="@+id/verticalLine"
+            app:layout_constraintTop_toBottomOf="@+id/vibrationText" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical"
+            android:id="@+id/verticalLine"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.multi.game.core.library.CustomImageButton
+        android:id="@+id/closeButton"
+        android:src="@drawable/button_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginTop="-15dp"
+        app:layout_constraintEnd_toEndOf="@+id/centerContainer"
+        app:layout_constraintTop_toTopOf="@+id/centerContainer" />
+
+    <com.multi.game.core.library.CustomImageButton
+        android:id="@+id/confirmButton"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:src="@drawable/button_on_active"
+        app:layout_constraintBottom_toBottomOf="@+id/centerContainer"
+        app:layout_constraintEnd_toEndOf="@+id/centerContainer"
+        app:layout_constraintStart_toStartOf="@+id/centerContainer"
+        app:layout_constraintTop_toBottomOf="@+id/centerContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

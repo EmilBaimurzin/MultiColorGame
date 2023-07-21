@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game">
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_medium_layout"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.multi.game.core.library.CustomImageButton
+            android:id="@+id/button_home"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/button_home" />
+
+        <TextView
+            android:id="@+id/timeText"
+            style="@style/BasicText"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_time"
+            android:gravity="start|center"
+            android:paddingStart="64dp"
+            android:paddingTop="3dp"
+            android:textColor="#0D007D"
+            android:textSize="10sp"
+            tools:text="1:00" />
+
+        <TextView
+            android:id="@+id/balanceText"
+            style="@style/BasicText"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_balance"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="20dp"
+            android:textColor="#0D007D"
+            app:autoSizeMaxTextSize="8sp"
+            app:autoSizeMinTextSize="4sp"
+            app:autoSizeTextType="uniform"
+            tools:text="1000" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gameRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_list"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_medium_layout"
+        app:layout_constraintEnd_toEndOf="@+id/bottomLayout"
+        app:layout_constraintStart_toStartOf="@+id/bottomLayout"
+        app:layout_constraintTop_toTopOf="@+id/bottomLayout" />
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.multi.game.core.library.CustomImageButton
+            android:id="@+id/button_pause"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/button_pause" />
+
+        <LinearLayout
+            android:id="@+id/button_remove_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/img_help" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/button_five" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_remove_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:rotation="-90"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/img_help" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/button_five" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/button_reset" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/button_three" />
+
+        </LinearLayout>
+
+        <com.multi.game.core.library.CustomImageButton
+            android:id="@+id/button_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/button_quit" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
